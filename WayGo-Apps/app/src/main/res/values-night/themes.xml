@@ -1,39 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.WayGo" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/blue_200</item>
-        <item name="colorPrimaryVariant">@color/blue_700</item>
-        <item name="colorOnPrimary">@color/black</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
-    </style>
-    <style name="cardview_default">
-        <item name="cardBackgroundColor">
-            @color/black
-        </item>
-        <item name="android:layout_margin">
-            5dp
-        </item>
-        <item name="android:clickable">
-            true
-        </item>
-        <item name="android:focusable">
-            true
-        </item>
-    </style>
-
-    <style name="text_default">
-        <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">20sp</item>
-        <item name="fontFamily">sans-serif</item>
-        <item name="android:textStyle">normal</item>
-        <item name="android:text">@string/app_name</item>
-        <item name="elevation">5dp</item>
+    <style name="Base.Theme.WayGo" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="colorPrimary">@color/blue_light</item>
     </style>
 </resources>

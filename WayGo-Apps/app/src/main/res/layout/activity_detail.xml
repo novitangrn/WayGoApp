@@ -1,88 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.detail.DetailActivity">
+    tools:context=".ui.detail.DetailActivity">
 
-    <LinearLayout
+    <ImageView
+        android:id="@+id/img_detail"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:background="#00000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-
-        <ImageView
-            android:id="@+id/ivDetail"
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/appBar"
             android:layout_width="match_parent"
-            android:layout_height="350dp"
-            android:contentDescription="@string/image_desc"
-            android:scaleType="fitXY"
-            android:transitionName="image"
-            tools:srcCompat="@tools:sample/avatars" />
+            android:layout_height="?attr/actionBarSize"
+            android:background="#00000000"
+            app:menu="@menu/option_menu"
+            app:titleTextColor="@color/white"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="-50dp"
+        android:background="@drawable/bg_welcome"
+        android:backgroundTint="@color/blue_light"
+        android:padding="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_detail"
+        app:layout_constraintVertical_bias="0.0">
 
         <TextView
-            android:id="@+id/tvDetail"
-            android:layout_width="match_parent"
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif"
-            android:padding="3dp"
-            android:text="@string/title"
-            android:textColor="@color/black"
-            android:textSize="40sp"
+            android:layout_marginTop="8dp"
+            android:text="Title"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:layout_marginStart="2dp"
             android:textStyle="bold"
-            android:transitionName="title" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tvDeskripsi"
-            style="@style/text_default"
-            android:layout_width="match_parent"
+            android:id="@+id/tv_kategori"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="3dp"
-            android:text="@string/template"
-            android:transitionName="description" />
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="2dp"
+            android:text="Kategori"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
-        <TableLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/tv_ingredients_title"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:padding="5dp">
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="24dp"
+            android:text="Jam Buka"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_kategori" />
 
-            <TableRow>
+        <TextView
+            android:id="@+id/tv_ingredients"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:text="jam buka"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_ingredients_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_ingredients_title" />
 
-                <TextView android:text="@string/longitude" />
+        <TextView
+            android:id="@+id/tv_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="24dp"
+            android:text="Lokasi"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_ingredients" />
 
-                <TextView android:id="@+id/longDetailValue" />
-            </TableRow>
+        <TextView
+            android:id="@+id/tv_detail_Lokasi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="8dp"
+            android:text="Lokasi"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_video"
+            app:layout_constraintVertical_bias="0.0" />
 
-            <View
-                android:layout_height="1dp"
-                android:background="@color/black" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <TableRow>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView android:text="@string/latitude" />
-
-                <TextView android:id="@+id/latDetailValue" />
-            </TableRow>
-
-            <View
-                android:layout_height="1dp"
-                android:background="@color/black" />
-
-            <TableRow>
-
-                <TextView android:text="@string/cat" />
-
-                <TextView android:id="@+id/createdAtDetailValue" />
-            </TableRow>
-
-            <View
-                android:layout_height="1dp"
-                android:background="@color/black" />
-
-        </TableLayout>
-
-    </LinearLayout>
-
-
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
