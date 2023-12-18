@@ -3,13 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <uses-feature android:name="android.hardware.camera" />
 
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
 
     <application
         android:allowBackup="true"
@@ -21,51 +23,42 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WayGo"
         tools:targetApi="31">
-        To get one, follow the directions here:
-
-        https://developers.google.com/maps/documentation/android-sdk/get-api-key
-
-        Once you have your API key (it starts with "AIza"), define a new property in your
-        project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
-        "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
-        -->
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyDyThDNUzURUjflWLFZOlwQjt5Td0ufZ6Q" />
-
-
         <activity
-            android:name=".view.maps.MapActivity"
+            android:name=".ui.rundown.ResultGenerateRundown"
             android:exported="false"
-            android:label="MapsActivity" />
+            android:label="@string/title_activity_result_generate_rundown"
+            android:theme="@style/Theme.WayGo" />
         <activity
-            android:name=".view.tourism.AddTourismActivity"
+            android:name=".ui.rundown.GenerateRundown"
             android:exported="false" />
         <activity
-            android:name=".view.camX.CamX"
+            android:name=".ui.rundown.CustomRundown"
             android:exported="false" />
         <activity
-            android:name=".view.detail.DetailActivity"
+            android:name=".ui.detail.DetailActivity"
             android:exported="false" />
         <activity
-            android:name=".view.signup.SignupActivity"
-            android:exported="true" />
+            android:name=".ui.MainActivity"
+            android:exported="false"
+            android:label="@string/title_activity_main2" />
         <activity
-            android:name=".view.login.LoginActivity"
-            android:exported="false" />
-        <activity
-            android:name=".view.main.MainActivity"
-            android:exported="true" />
-        <activity
-            android:name=".view.SplashActivity"
+            android:name=".ui.splash.SplashScreen"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.welcome.WelcomeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.register.RegisterActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
